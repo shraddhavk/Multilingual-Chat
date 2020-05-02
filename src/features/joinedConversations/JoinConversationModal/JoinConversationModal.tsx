@@ -30,12 +30,14 @@ import { joinConversation } from "../joinConversationCommand";
 
 // Fetch all conversations and remove the ones we're already a member of
 const getJoinableConversations = createSelector(
+  
   [getAllConversations, getLoggedInUserId, getConversationsByUserId],
   (
     conversations: Conversation[],
     userId: string,
     joinedConversations: MembershipHash
   ): ConversationDescriptionFragment[] => {
+    
     return conversations.filter(conversation => {
       return !joinedConversations[userId]
         .map(conv => conv.id)
@@ -53,7 +55,7 @@ const JoinConversationModal = () => {
   const dispatch = useDispatch();
   const breakpoint = useSelector(getBreakpoint);
   const Panel = breakpoint === Breakpoint.Small ? Modal : AnimatedModal;
-
+    
   return (
     <Overlay displayed={panels.Overlay}>
       <Panel pose={panels.Overlay ? "open" : "closed"}>

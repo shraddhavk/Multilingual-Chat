@@ -30,14 +30,19 @@ export interface ConversationFragment {
 }
 
 export const getJoinedConversations = createSelector(
+  
   [getConversationsById, getLoggedInUserId, getConversationsByUserId],
   (
     conversations: ConversationsIndexedById,
     userId: string,
     userConversations: MembershipHash
   ): ConversationFragment[] => {
+    
     return userConversations[userId]
       ? userConversations[userId].map(conversation => {
+        // const a = conversation.id;
+        // const b = a.replace('space_','space.');
+        //console.log(b);
           return {
             id: conversation.id,
             name: conversations[conversation.id].name
@@ -48,6 +53,7 @@ export const getJoinedConversations = createSelector(
 );
 
 const MyConversations = () => {
+
   const currentUserId = useSelector(getLoggedInUserId);
   const conversationsById = useSelector(getConversationsById);
   const conversations: ConversationFragment[] = useSelector(
@@ -61,11 +67,11 @@ const MyConversations = () => {
     dispatch(fetchSpaces());
     dispatch(setLayoutOverlay());
   };
-
+//console.log(conversationsById);
   if (conversationsById === undefined) {
     return <div>Loading...</div>;
   }
-
+  
   return (
     <Wrapper>
       <Title>
@@ -75,6 +81,7 @@ const MyConversations = () => {
         </AddButton>
       </Title>
       <ConversationList>
+        
         {conversations.map(conversation => (
           <ConversationItem
             id={conversation.id}
@@ -88,7 +95,10 @@ const MyConversations = () => {
             onClick={() => {
               dispatch(focusOnConversation(conversation.id));
               dispatch(setLayoutDefault());
-
+            
+              // const change = conversation.id;
+              // const changed=change.replace('space_','space.');
+              // console.log(changed);
               if (members.length === 0) {
                 dispatch(
                   fetchMembers({

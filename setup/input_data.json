@@ -805,57 +805,57 @@
     {
       "name": "Introductions",
       "description": "This channel is for company wide chatter",
-      "id": "space_ac4e67b98b34b44c4a39466e93e"
+      "id": "space.ac4e67b98b34b44c4a39466e93e"
     },
     {
       "name": "Off Topic",
       "description": "Non-work banter and water cooler conversation",
-      "id": "space_a204f87d215a40985d35cf84bf5"
+      "id": "space.a204f87d215a40985d35cf84bf5"
     },
     {
       "name": "India Office",
       "description": "भारत के कार्यालय में आपका स्वागत है🇮🇳!",
-      "id": "space_515fc9a2a1a895f4059c84b2971"
+      "id": "space.515fc9a2a1a895f4059c84b2971"
     },
     {
       "name": "London Office",
       "description": "London Office 🇬🇧",
-      "id": "space_a652eb6cc340334ff0b244c4a39"
+      "id": "space.a652eb6cc340334ff0b244c4a39"
     },
     {
       "name": "Poland Office",
       "description": "Zapytaj nas o co kolwiek 🇵🇱",
-      "id": "space_c1ee1eda28554d0a34f9b9df5cfe"
+      "id": "space.c1ee1eda28554d0a34f9b9df5cfe"
     },
     {
       "name": "Daily Standup",
       "description": "Async virtual standup",
-      "id": "space_2ada61db17878cd388f95da34f9"
+      "id": "space.2ada61db17878cd388f95da34f9"
     },
     {
       "name": "Exec AMA",
       "description": "Ask the CEO anything",
-      "id": "space_e1eda2fd92e551358e4af1b6174"
+      "id": "space.e1eda2fd92e551358e4af1b6174"
     },
     {
       "name": "Company Culture",
       "description": "Company culture space",
-      "id": "space_ce466f2e445c38976168ba78e46"
+      "id": "space.ce466f2e445c38976168ba78e46"
     },
     {
       "name": "Movies",
       "description": "Everything about movies",
-      "id": "space_149e60f311749f2a7c6515f7b34"
+      "id": "space.149e60f311749f2a7c6515f7b34"
     },
     {
       "name": "Running",
       "description": "soc-running space",
-      "id": "space_363d9255193e45f190539e0c7d5"
+      "id": "space.363d9255193e45f190539e0c7d5"
     }
   ],
   "members": [
     {
-      "space": "space_ac4e67b98b34b44c4a39466e93e",
+      "space": "space.ac4e67b98b34b44c4a39466e93e",
       "members": [
         "user_a652eb6cc34b44c4a39b28fcc24d062b",
         "user_d06c7d5ddc1c4c85bd66844198b2ca38",
@@ -960,7 +960,7 @@
       ]
     },
     {
-      "space": "space_a204f87d215a40985d35cf84bf5",
+      "space": "space.a204f87d215a40985d35cf84bf5",
       "members": [
         "user_30b5b567829e485ab6267c3c78d48ca3",
         "user_7261c27b34954ece93ac0d8a15520591",
@@ -975,7 +975,7 @@
       ]
     },
     {
-      "space": "space_515fc9a2a1a895f4059c84b2971",
+      "space": "space.515fc9a2a1a895f4059c84b2971",
       "members": [
         "user_a652eb6cc34b44c4a39b28fcc24d062b",
         "user_d06c7d5ddc1c4c85bd66844198b2ca38",
@@ -1080,7 +1080,7 @@
       ]
     },
     {
-      "space": "space_a652eb6cc340334ff0b244c4a39",
+      "space": "space.a652eb6cc340334ff0b244c4a39",
       "members": [
         "user_55368a92e24e4e26a2e143db53205fd3",
         "user_2208f461810144cb8994ecc5136cc3ee",
@@ -1100,7 +1100,7 @@
       ]
     },
     {
-      "space": "space_c1ee1eda28554d0a34f9b9df5cfe",
+      "space": "space.c1ee1eda28554d0a34f9b9df5cfe",
       "members": [
         "user_149e60f3117d4fb280c992762d3c09e3",
         "user_a204f87d215a409798be9fb207685f44",
@@ -1123,7 +1123,7 @@
       ]
     },
     {
-      "space": "space_2ada61db17878cd388f95da34f9",
+      "space": "space.2ada61db17878cd388f95da34f9",
       "members": [
         "user_5500315bf0a34f9b9dfa0e4fffcf49c2",
         "user_a67530c8d4ac4ab4a27a9e4b129bdda5",
@@ -1147,7 +1147,7 @@
       ]
     },
     {
-      "space": "space_e1eda2fd92e551358e4af1b6174",
+      "space": "space.e1eda2fd92e551358e4af1b6174",
       "members": [
         "user_72a0cc784d4543f2b1d9cee9961d7e49",
         "user_fbc9a54790b24ee19441260970b171c0",
@@ -1164,7 +1164,7 @@
       ]
     },
     {
-      "space": "space_ce466f2e445c38976168ba78e46",
+      "space": "space.ce466f2e445c38976168ba78e46",
       "members": [
         "user_16cc89c2e06c497cb65930f0c4729dce",
         "user_dfc0406700564f0797038bebeabb617f",
@@ -1186,7 +1186,7 @@
       ]
     },
     {
-      "space": "space_149e60f311749f2a7c6515f7b34",
+      "space": "space.149e60f311749f2a7c6515f7b34",
       "members": [
         "user_a652eb6cc34b44c4a39b28fcc24d062b",
         "user_d06c7d5ddc1c4c85bd66844198b2ca38",
@@ -1234,7 +1234,7 @@
       ]
     },
     {
-      "space": "space_363d9255193e45f190539e0c7d5",
+      "space": "space.363d9255193e45f190539e0c7d5",
       "members": [
         "user_3c4400761cba4b65b77b6cae55fc21eb",
         "user_515fc9a2a1b043c3847a29f29f3b3c2a",

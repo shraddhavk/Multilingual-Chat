@@ -1,26 +1,28 @@
-import { AppState } from "main/storeTypes";
-import { createSelector } from "reselect";
-import { createPresenceReducer, Presence } from "pubnub-redux";
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+import { AppState } from 'main/storeTypes';
+import { createSelector } from 'reselect';
+import { createPresenceReducer, Presence } from 'pubnub-redux';
 
 export interface ConversationPresence {
-  [conversationId: string]: {
-    name: string;
-    occupants: Presence[];
-    occupancy: number;
-  };
+    [conversationId: string]: {
+        name: string;
+        occupants: Presence[];
+        occupancy: number;
+    };
 }
 
-/**
- * Create a reducer to precense information for conversation members
- */
 const MemberPresenceReducer = createPresenceReducer();
 export { MemberPresenceReducer };
 
-const getByPresenceSlice = (state: AppState) => state.memberPresence;
+const getByPresenceSlice = (state: AppState) => {
+    //console.log(state.memberPresence);
+    return state.memberPresence;
+};
 
 export const getPresenceByConversationId = createSelector(
-  [getByPresenceSlice],
-  (presence: { byId: ConversationPresence }) => {
-    return presence.byId;
-  }
+    [getByPresenceSlice],
+    (presence: { byId: ConversationPresence }) => {
+        //console.log(presence.byId);
+        return presence.byId;
+    },
 );

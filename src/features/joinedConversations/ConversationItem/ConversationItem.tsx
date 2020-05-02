@@ -28,8 +28,15 @@ const ConversationItem = ({
   onLeave,
   unreadMessageCount
 }: ConversationItemProps) => {
-  const [isHovering, hoverProps] = useHover({ mouseEnterDelayMS: 0 });
+  
+  const [isHovering, hoverProps] = useHover({ mouseEnterDelayMS: 1 });
   const canLeave: boolean = id !== DEFAULT_CONVERSATION;
+  //console.log(id);
+  //console.log(name);
+  // console.log(onLeave);
+  // console.log(onClick);
+  //console.log(unreadMessageCount);
+  
   return (
     <Wrapper
       {...hoverProps}
@@ -51,9 +58,7 @@ const ConversationItem = ({
           <Leave fill={selected ? "white" : "#979797"} />
         </IconWrapper>
       ) : (
-        unreadMessageCount > 0 && (
           <MessageCount>{unreadMessageCount}</MessageCount>
-        )
       )}
     </Wrapper>
   );

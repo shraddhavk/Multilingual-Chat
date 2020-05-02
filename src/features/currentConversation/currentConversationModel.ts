@@ -1,99 +1,95 @@
-import { AppState } from "main/storeTypes";
-import { AppActions } from "main/AppActions";
-import { createSelector } from "reselect";
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/class-name-casing */
+import { AppState } from 'main/storeTypes';
+import { AppActions } from 'main/AppActions';
+import { createSelector } from 'reselect';
 
-export const DEFAULT_CONVERSATION = "space_ac4e67b98b34b44c4a39466e93e";
+export const DEFAULT_CONVERSATION = 'space.ac4e67b98b34b44c4a39466e93e';
 
-export const FOCUS_ON_CONVERSATION = "FOCUS_ON_CONVERSATION";
-export const UPDATE_CONVERSATION_MESSAGE_INPUT_VALUE =
-  "UPDATE_CONVERSATION_MESSAGE_INPUT_VALUE";
+export const FOCUS_ON_CONVERSATION = 'FOCUS_ON_CONVERSATION';
+export const UPDATE_CONVERSATION_MESSAGE_INPUT_VALUE = 'UPDATE_CONVERSATION_MESSAGE_INPUT_VALUE';
 
 export interface focusOnConversationAction {
-  type: typeof FOCUS_ON_CONVERSATION;
-  payload: string;
+    type: typeof FOCUS_ON_CONVERSATION;
+    payload: string;
 }
 
 export interface updateConversationMessageInputValueAction {
-  type: typeof UPDATE_CONVERSATION_MESSAGE_INPUT_VALUE;
-  payload: {
-    conversationId: string;
-    value: string;
-  };
+    type: typeof UPDATE_CONVERSATION_MESSAGE_INPUT_VALUE;
+    payload: {
+        conversationId: string;
+        value: string;
+    };
 }
 
-export const focusOnConversation = (
-  target: string
-): focusOnConversationAction => {
-  return {
-    type: FOCUS_ON_CONVERSATION,
-    payload: target
-  };
+export const focusOnConversation = (target: string): focusOnConversationAction => {
+    return {
+        type: FOCUS_ON_CONVERSATION,
+        payload: target,
+    };
 };
 
 export const updateConversationMessageInputValueAction = (
-  conversationId: string,
-  value: string
+    conversationId: string,
+    value: string,
 ): updateConversationMessageInputValueAction => {
-  return {
-    type: UPDATE_CONVERSATION_MESSAGE_INPUT_VALUE,
-    payload: {
-      conversationId,
-      value
-    }
-  };
+    return {
+        type: UPDATE_CONVERSATION_MESSAGE_INPUT_VALUE,
+        payload: {
+            conversationId,
+            value,
+        },
+    };
 };
 
 export interface CurrentConversationState {
-  currentConversationId: string;
-  conversationsMessageInputValuesById: { [conversationId: string]: string };
+    currentConversationId: string;
+    conversationsMessageInputValuesById: { [conversationId: string]: string };
 }
 
 const initialState: CurrentConversationState = {
-  currentConversationId: DEFAULT_CONVERSATION,
-  conversationsMessageInputValuesById: {}
+    currentConversationId: DEFAULT_CONVERSATION,
+    conversationsMessageInputValuesById: {},
 };
 
 const currentConversationStateReducer = (
-  state: CurrentConversationState = initialState,
-  action: AppActions
+    state: CurrentConversationState = initialState,
+    action: AppActions,
 ): CurrentConversationState => {
-  switch (action.type) {
-    case FOCUS_ON_CONVERSATION:
-      return { ...state, currentConversationId: action.payload };
-    case UPDATE_CONVERSATION_MESSAGE_INPUT_VALUE: {
-      const newConversationsMessageInputValuesById = {
-        ...state.conversationsMessageInputValuesById,
-        [action.payload.conversationId]: action.payload.value
-      };
-      return {
-        ...state,
-        conversationsMessageInputValuesById: newConversationsMessageInputValuesById
-      };
+    switch (action.type) {
+        case FOCUS_ON_CONVERSATION:
+            return { ...state, currentConversationId: action.payload };
+        case UPDATE_CONVERSATION_MESSAGE_INPUT_VALUE: {
+            const newConversationsMessageInputValuesById = {
+                ...state.conversationsMessageInputValuesById,
+                [action.payload.conversationId]: action.payload.value,
+            };
+            return {
+                ...state,
+                conversationsMessageInputValuesById: newConversationsMessageInputValuesById,
+            };
+        }
+        default:
+            return state;
     }
-    default:
-      return state;
-  }
 };
 
 export { currentConversationStateReducer };
 
-const getCurrentConversationSlice = (state: AppState) =>
-  state.currentConversation;
+const getCurrentConversationSlice = (state: AppState) => state.currentConversation;
 
 export const getCurrentConversationId = createSelector(
-  [getCurrentConversationSlice],
-  (currentConversation: CurrentConversationState): string => {
-    return currentConversation.currentConversationId;
-  }
+    [getCurrentConversationSlice],
+    (currentConversation: CurrentConversationState): string => {
+        const newId = currentConversation.currentConversationId.replace('space_', 'space.');
+        // sconsole.log(newId);
+        return newId;
+    },
 );
 
 export const getConversationMessageInputValue = createSelector(
-  [getCurrentConversationSlice],
-  (currentConversation: CurrentConversationState): string => {
-    return (
-      currentConversation.conversationsMessageInputValuesById[
-        currentConversation.currentConversationId
-      ] || ""
-    );
-  }
+    [getCurrentConversationSlice],
+    (currentConversation: CurrentConversationState): string => {
+        return currentConversation.conversationsMessageInputValuesById[currentConversation.currentConversationId] || '';
+    },
 );

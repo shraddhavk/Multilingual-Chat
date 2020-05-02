@@ -37,6 +37,8 @@ export const getCurrentConversationOccupancy = createSelector(
   ): ConversationOccupancyFragment => {
     const members = conversationMemberships[currentConversationId];
     const presence = conversationPresence[currentConversationId];
+    //console.log(members);
+    //console.log(presence);
     return {
       joinedCount: members ? members.length : 0,
       presentCount: presence ? presence.occupancy : 0
