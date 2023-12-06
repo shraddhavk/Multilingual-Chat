@@ -15,7 +15,7 @@
     "@types/styled-components": "^4.1.19",
     "emoji-mart": "^2.11.1",
     "polished": "^3.4.1",
-    "pubnub": "^4.27.0",
+    "pubnub": "^7.4.0",
     "pubnub-react": "^2.0.0-beta.4",
     "pubnub-redux": "^0.0.2-beta",
     "react": "^16.9.0",
